@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="KrewBanking@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="krewbanking">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="test"/>
+    <table id="7" parent="2" name="banking_database"/>
+    <table id="8" parent="2" name="gegevens"/>
+    <table id="9" parent="2" name="geldautomaten"/>
+    <table id="10" parent="2" name="pinpas"/>
+    <table id="11" parent="2" name="rekeningen"/>
+    <table id="12" parent="2" name="rekeninghouders"/>
+    <table id="13" parent="2" name="rekeninghouders_rekeningen"/>
+    <column id="14" parent="7" name="DB_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="7" name="BSN">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="7" name="IBAN">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="17" parent="7" name="Status">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="18" parent="7" name="Banking_Database_DB_ID_uindex">
+      <ColNames>DB_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="19" parent="7" name="Banking_Database_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="20" parent="7" name="banking_database_rekeninghouders_BSN_fk">
+      <ColNames>BSN</ColNames>
+    </index>
+    <key id="21" parent="7" name="PRIMARY">
+      <ColNames>DB_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="22" parent="7" name="Banking_Database_DB_ID_uindex">
+      <ColNames>DB_ID</ColNames>
+      <UnderlyingIndexName>Banking_Database_DB_ID_uindex</UnderlyingIndexName>
+    </key>
+    <key id="23" parent="7" name="Banking_Database_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <UnderlyingIndexName>Banking_Database_IBAN_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="24" parent="7" name="banking_database_rekeninghouders_BSN_fk">
+      <ColNames>BSN</ColNames>
+      <RefSchemaName>krewbanking</RefSchemaName>
+      <RefTableName>rekeninghouders</RefTableName>
+      <RefColNames>BSN</RefColNames>
+    </foreign-key>
+    <foreign-key id="25" parent="7" name="banking_database_rekeningen_IBAN_fk">
+      <ColNames>IBAN</ColNames>
+      <RefSchemaName>krewbanking</RefSchemaName>
+      <RefTableName>rekeningen</RefTableName>
+      <RefColNames>IBAN</RefColNames>
+    </foreign-key>
+    <column id="26" parent="8" name="Naam">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="8" name="IBAN">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="8" name="SALDO">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="ATM_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="9" name="Status">
+      <Position>2</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="9" name="Geld_Limiet">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="9" name="geldautomaten_ATM_ID_uindex">
+      <ColNames>ATM_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="9" name="PRIMARY">
+      <ColNames>ATM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="34" parent="9" name="geldautomaten_ATM_ID_uindex">
+      <ColNames>ATM_ID</ColNames>
+      <UnderlyingIndexName>geldautomaten_ATM_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="35" parent="10" name="IBAN">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="PASNR">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="10" name="Status">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="10" name="PinPas_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="10" name="PinPas_PASNR_uindex">
+      <ColNames>PASNR</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="10" name="PRIMARY">
+      <ColNames>PASNR</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="41" parent="10" name="PinPas_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <UnderlyingIndexName>PinPas_IBAN_uindex</UnderlyingIndexName>
+    </key>
+    <key id="42" parent="10" name="PinPas_PASNR_uindex">
+      <ColNames>PASNR</ColNames>
+      <UnderlyingIndexName>PinPas_PASNR_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="43" parent="10" name="pinpas_rekeningen_IBAN_fk">
+      <ColNames>IBAN</ColNames>
+      <RefSchemaName>krewbanking</RefSchemaName>
+      <RefTableName>rekeningen</RefTableName>
+      <RefColNames>IBAN</RefColNames>
+    </foreign-key>
+    <column id="44" parent="11" name="IBAN">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="11" name="Saldo">
+      <Position>2</Position>
+      <DataType>decimal(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="11" name="Status">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="47" parent="11" name="rekeningen_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="11" name="rekeningen_IBAN_uindex">
+      <ColNames>IBAN</ColNames>
+      <UnderlyingIndexName>rekeningen_IBAN_uindex</UnderlyingIndexName>
+    </key>
+    <column id="49" parent="12" name="BSN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="12" name="PinCode">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="51" parent="12" name="rekeninghouders_BSN_uindex">
+      <ColNames>BSN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="12" name="PRIMARY">
+      <ColNames>BSN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="53" parent="12" name="rekeninghouders_BSN_uindex">
+      <ColNames>BSN</ColNames>
+      <UnderlyingIndexName>rekeninghouders_BSN_uindex</UnderlyingIndexName>
+    </key>
+    <column id="54" parent="13" name="BSN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="13" name="IBAN">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="56" parent="13" name="rekeninghouders_rekeningen_rekeningen_IBAN_fk">
+      <ColNames>IBAN</ColNames>
+    </index>
+    <index id="57" parent="13" name="rekeninghouders_rekeningen_rekeninghouders_BSN_fk">
+      <ColNames>BSN</ColNames>
+    </index>
+    <foreign-key id="58" parent="13" name="rekeninghouders_rekeningen_rekeninghouders_BSN_fk">
+      <ColNames>BSN</ColNames>
+      <RefSchemaName>krewbanking</RefSchemaName>
+      <RefTableName>rekeninghouders</RefTableName>
+      <RefColNames>BSN</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="13" name="rekeninghouders_rekeningen_rekeningen_IBAN_fk">
+      <ColNames>IBAN</ColNames>
+      <RefSchemaName>krewbanking</RefSchemaName>
+      <RefTableName>rekeningen</RefTableName>
+      <RefColNames>IBAN</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
