@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author admin
  */
-public class YoutubeUser extends Application {
+public class Interface extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
