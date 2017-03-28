@@ -1,0 +1,14 @@
+NFC Kaarlezer Set-up
+
+Pin layout should be as follows:
+Signal     Pin              	              Pin
+           Arduino Uno      Jumper color      MFRC522 board
+------------------------------------------------------------
+Volt		3.3V			Oranje > Oranje		3.3V
+Reset      	9               Rood > Groen		RST
+Ground		GND				Bruin > Wit			GND
+
+SPI MOSI   	11              Wit > D.Blauw     	MOSI
+SPI MISO   	12              Zwart > Wit			MISO
+SPI SCK    	13              Grijs > Groen		SCK
+SPI SS     	10              Paars > Zwart      	SDA

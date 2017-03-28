@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Bankaccount@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="Bankaccount">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="Bank Database"/>
+    <table id="8" parent="2" name="Bank Informatie"/>
+    <table id="9" parent="2" name="Bezoeker_Geldautomaat"/>
+    <table id="10" parent="2" name="Database_Connect"/>
+    <table id="11" parent="2" name="Geldautomaat"/>
+    <table id="12" parent="2" name="Geldautomaat_Bank">
+      <Comment>																		</Comment>
+    </table>
+    <table id="13" parent="2" name="Klant"/>
+    <table id="14" parent="2" name="Klant_Rekening"/>
+    <table id="15" parent="2" name="Pinpas"/>
+    <table id="16" parent="2" name="Pinpas_Bezoeker"/>
+    <table id="17" parent="2" name="Rekening"/>
+    <column id="18" parent="7" name="DB_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="7" name="IBAN">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="20" parent="7" name="PASNUM">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="21" parent="7" name="STATUS">
+      <Position>4</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <key id="22" parent="7" name="PRIMARY">
+      <ColNames>DB_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="8" name="KVK">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="8" name="Vestiging-Code">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="8" name="ATM_ID">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="26" parent="8" name="PRIMARY">
+      <ColNames>KVK
+Vestiging-Code</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="9" name="BSN">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="ATM_ID">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="Date_time">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="30" parent="9" name="PRIMARY">
+      <ColNames>BSN
+ATM_ID
+Date_time</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="10" name="DB_ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="10" name="ATM_ID">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="33" parent="10" name="PRIMARY">
+      <ColNames>DB_ID
+ATM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="11" name="ATM_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="11" name="STATUS">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="GELD_LIMIT">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="37" parent="11" name="PRIMARY">
+      <ColNames>ATM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="12" name="ATM_ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="12" name="VESTIGING_NUM">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="40" parent="12" name="PRIMARY">
+      <ColNames>ATM_ID
+VESTIGING_NUM</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="13" name="BSN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="IBAN">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="13" name="PinCode">
+      <Position>3</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <key id="44" parent="13" name="PRIMARY">
+      <ColNames>BSN
+IBAN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="14" name="BSN">
+      <Position>1</Position>
+      <DataType>varchar(12)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="14" name="IBAN">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="14" name="Gebruik_tot">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="48" parent="14" name="PRIMARY">
+      <ColNames>BSN
+IBAN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="15" name="IBAN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="15" name="PASNUM">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="15" name="STATUS">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="52" parent="15" name="PRIMARY">
+      <ColNames>IBAN
+PASNUM</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="16" name="PASNUM">
+      <Position>1</Position>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="16" name="PINCODE">
+      <Position>2</Position>
+      <DataType>varchar(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="16" name="GELDIG_TOT">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="56" parent="16" name="PRIMARY">
+      <ColNames>PASNUM
+PINCODE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="17" name="IBAN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="17" name="SALDO">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="59" parent="17" name="STATUS">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="60" parent="17" name="PRIMARY">
+      <ColNames>IBAN</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
